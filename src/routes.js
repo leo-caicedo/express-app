@@ -5,12 +5,12 @@ router.get("/", (req, res) => {
   res.json({ message: "hello friend" });
 });
 
-router.get(
-  "/home",
-  (req,
-  (res) => {
-    res.json({ message: "Welcome to home" });
-  })
-);
+router.get("/home", (req, res) => {
+  res.json({ message: "welcome to home" });
+});
+
+router.get("/about", (req, res) => {
+  res.json({ message: "welcome to about" });
+});
 
 module.exports = router;
