@@ -1,16 +1,10 @@
-const express = require("express");
+const createApp = require("./app");
 const { config } = require("./config");
 require("./db");
 
-const app = express();
-app.use(express.json());
+const app = createApp();
 
-// routes
-app.use("/api/posts", require("./post/routes"));
-app.get("/", (req, res) => {
-  res.redirect("/api/posts");
-});
-
-app.listen(config.port, () => {
+app.listen(config.port, (err) => {
+  if (err) return console.error(err);
   console.log(`Server on ${config.port}`);
 });
