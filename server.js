@@ -1,12 +1,12 @@
 const express = require("express");
+const { config } = require("./config");
 
-const port = process.env.PORT || 3000;
 const app = express();
 app.use(express.json());
 
 // routes
 app.use("/", require("./routes"));
 
-app.listen(port, () => {
-  console.log(`Server on ${port}`);
+app.listen(config.port, () => {
+  console.log(`Server on ${config.port}`);
 });

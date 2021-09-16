@@ -1,6 +1,8 @@
 const { Router } = require("express");
 const router = Router();
 
+require("./db");
+
 router.get("/", (req, res) => {
   res.json({ message: "hello friend" });
 });
